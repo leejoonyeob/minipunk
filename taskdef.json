@@ -12,7 +12,7 @@
           "appProtocol": "http"
         }
       ],
-      "essential": true,
+      "essential": true
     }
   ],
   "family": "cicd",
