@@ -3,7 +3,6 @@
     {
       "name": "cicdContainer",
       "image": "463470950104.dkr.ecr.ap-northeast-2.amazonaws.com/cicd",
-      "cpu": 0,
       "portMappings": [
         {
           "containerPort": 5000,
@@ -14,35 +13,11 @@
         }
       ],
       "essential": true,
-      "environment": [],
-      "environmentFiles": [],
-      "mountPoints": [],
-      "volumesFrom": [],
-      "ulimits": [],
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "options": {
-          "awslogs-group": "/ecs/cicd",
-          "mode": "non-blocking",
-          "awslogs-create-group": "true",
-          "max-buffer-size": "25m",
-          "awslogs-region": "ap-northeast-2",
-          "awslogs-stream-prefix": "ecs"
-        },
-        "secretOptions": []
-      },
-      "systemControls": []
     }
   ],
   "family": "cicd",
   "executionRoleArn": "arn:aws:iam::463470950104:role/ecsTaskExecutionRole",
   "networkMode": "awsvpc",
-  "volumes": [],
-  "placementConstraints": [],
-  "runtimePlatform": {
-    "cpuArchitecture": "X86_64",
-    "operatingSystemFamily": "LINUX"
-  },
   "requiresCompatibilities": [
     "FARGATE"
   ],
