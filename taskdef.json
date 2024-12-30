@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "cicdContainer",
-      "image": "463470950104.dkr.ecr.ap-northeast-2.amazonaws.com/cicd",
+      "image": "<IMAGE1_NAME>",
       "portMappings": [
         {
           "containerPort": 5000,
