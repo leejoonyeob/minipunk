@@ -7,5 +7,6 @@ then
     sudo systemctl start docker
     sudo systemctl enable docker
 fi
+chmod 644 /home/ec2-user/test/minipunk_image.tar
 sudo systemctl start docker
 sudo docker load -i /home/ec2-user/test/minipunk_image.tar
