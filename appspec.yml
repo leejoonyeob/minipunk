@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /file/
+  - source: codebuild/output/minipunk/
     destination: /home/ec2-user/test/file/
   - source: scripts/
     destination: /home/ec2-user/scripts
