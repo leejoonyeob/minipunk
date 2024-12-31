@@ -1,7 +1,6 @@
 version: 0.0
 os: linux
 files:
-  - source: minipunk_image.tar
   - source: scripts/
     destination: /home/ec2-user/scripts
 hooks:
