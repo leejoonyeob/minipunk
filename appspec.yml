@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: minipunk_image.tar
+  - source: /file/minipunk_image.tar
     destination: /home/ec2-user/test/
   - source: scripts/
     destination: /home/ec2-user/scripts
