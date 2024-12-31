@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: codebuild/output/minipunk/
-    destination: /home/ec2-user/test/file/
+    destination: /home/ec2-user/test/
   - source: scripts/
     destination: /home/ec2-user/scripts
 hooks:
