@@ -8,4 +8,4 @@ then
     sudo systemctl enable docker
 fi
 sudo systemctl start docker
-docker load -i minipunk_image.tar
+docker load -i /home/ec2-user/test/minipunk_image.tar
