@@ -7,5 +7,5 @@ then
     sudo systemctl start docker
     sudo systemctl enable docker
 fi
-
+sudo systemctl start docker
 docker load -i minipunk_image.tar
