@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DEPLOYMENT_PATH=$(pwd)
+
 if ! command -v docker &> /dev/null
 then
     echo "Docker could not be found. Installing Docker..."
@@ -7,6 +9,6 @@ then
     sudo systemctl start docker
     sudo systemctl enable docker
 fi
-sudo chmod 644 /home/ec2-user/test/minipunk_image.tar
 sudo systemctl start docker
-sudo docker load -i /home/ec2-user/test/minipunk_image.tar
+
+docker load -i "$DEPLOYMENT_PATH/minipunk_image.tar"
