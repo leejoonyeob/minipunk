@@ -9,4 +9,4 @@ then
 fi
 sudo systemctl start docker
 
-docker load -i /test/file/minipunk_image.tar
+docker load -i /test/codebuild/output/minipunk/minipunk_image.tar
