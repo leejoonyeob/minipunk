@@ -21,14 +21,6 @@ RUN chmod +x build.sh && ./build.sh
 
 FROM python:3.10.15-slim-bullseye
 
-COPY from=builder /game/dist/ /game/
-
-WORKDIR /game
-
-CMD ["python", "-m", "http.server", "5000"]
-
-FROM python:3.10.15-slim-bullseye
-
 COPY --from=builder /game/dist/ /game/
 
 WORKDIR /game
