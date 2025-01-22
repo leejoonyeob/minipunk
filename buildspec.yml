@@ -9,7 +9,13 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo Creating Dockerrun.aws.json
+      - printf '{"AWSEBDockerrunVersion":"1","Ports":[{"ContainerPort":5000,"HostPort":80}]}' > Dockerrun.aws.json
 
 artifacts:
   files:
-    - '**/*'
+    - Dockerrun.aws.json
+    - .ebextensions/**/*
+    - Dockerfile
+    - Efficient-Compression-Tool/**/*
+    - js13k-minipunk/**/*
