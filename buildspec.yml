@@ -1,25 +1,19 @@
 version: 0.2
 
 phases:
-  pre_build:
-    commands:
-      - echo Logging in to Docker Hub...
-      - docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
-  
   build:
     commands:
       - echo Build started on `date`
       - docker build -t minipunk .
-      - docker tag minipunk:latest $DOCKERHUB_USERNAME/minipunk:latest
   
   post_build:
     commands:
       - echo Build completed on `date`
-      - docker push $DOCKERHUB_USERNAME/minipunk:latest
       - echo Writing Dockerrun.aws.json file...
-      - printf '{"AWSEBDockerrunVersion":"1","Image":{"Name":"%s/minipunk:latest","Update":"true"},"Ports":[{"ContainerPort":5000,"HostPort":80}]}' $DOCKERHUB_USERNAME > Dockerrun.aws.json
+      - printf '{"AWSEBDockerrunVersion":"1","Ports":[{"ContainerPort":5000,"HostPort":80}]}' > Dockerrun.aws.json
 
 artifacts:
   files:
     - Dockerrun.aws.json
     - .ebextensions/**/*
+    - Dockerfile
